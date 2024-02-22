@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Motion</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e0e0e0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .stripe {
+            width: 200px;
+            height: 500px;
+            margin: 0 10px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            position: absolute;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        @keyframes moveUpAndDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100%);
+            }
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .stripe:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        .stripe:nth-child(even) {
+            background-color: #d0d0d0;
+        }
+
+        @media (max-width: 600px) {
+            .stripe {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stripe">
+            <div class="content" style="animation: moveUpAndDown 5s ease-in-out infinite;">
+                Text 1
+            </div>
+        </div>
+        <div class="stripe">
+            <div class="content" style="animation: moveDown 7s ease-in-out infinite;">
+                Text 2
+            </div>
+        </div>
+        <div class="stripe">
+            <div class="content" style="animation: moveUpAndDown 5s ease-in-out infinite;">
+                Text 3
+            </div>
+        </div>
+        <div class="stripe">
+            <div class="content" style="animation: moveDown 7s ease-in-out infinite;">
+                Text 4
+            </div>
+        </div>
+        <div class="stripe">
+            <div class="content" style="animation: moveUpAndDown 5s ease-in-out infinite;">
+                Text 5
+            </div>
+        </div>
+    </div>
+</body>
+</html>

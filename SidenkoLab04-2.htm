@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SidenkoLab04-2</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .lane {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .lane1 { top: 50px; background-color: #e0e0e0; animation: oscillate 20s linear infinite; }
+    .lane2 { top: 100px; background-color: #d3d3d3; animation: moveRightToLeft 30s linear infinite; }
+    .lane3 { top: 150px; background-color: #c0c0c0; animation: moveLeftToRight 40s linear infinite; }
+    .lane4 { top: 200px; background-color: #b0b0b0; animation: moveRightToLeft 50s linear infinite; }
+    .lane5 { top: 250px; background-color: #a0a0a0; animation: oscillatetwo 20s linear infinite; }
+
+    @keyframes moveRightToLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes moveLeftToRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes oscillate {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(100%); }
+    }
+
+    @keyframes oscillatetwo {
+      0%, 100% { transform: translateX(100%); }
+      50% { transform: translateX(0); }
+    } 
+  </style>
+</head>
+<body>
+  <div class="lane lane1">Текст у рядку коливається з боку в бік.</div>
+  <div class="lane lane2">Текст пробігає справа наліво та з’являється знову.</div>
+  <div class="lane lane3">Текст у рядку пробігає зліва направо та зупиняється.</div>
+  <div class="lane lane4">Текст пробігає справа наліво та з’являється знову.</div>
+  <div class="lane lane5">Текст у рядку коливається з боку в бік.</div>
+</body>
+</html>
